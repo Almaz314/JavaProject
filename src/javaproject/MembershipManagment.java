@@ -103,9 +103,42 @@ public class MembershipManagment {
 }
     public void removeMember(LinkedList<Member> m){
         int memberID;
-        System.out.println();
-        m.getIntInput();
-        for(int i = 0; i < m.size(); i++)
+        System.out.println("\nEnter Member ID to remove: ");
+        memberID = getIntInput();
+        for(int i = 0; i < m.size(); i++){
+            if (m.get(i).getMemberID() == memberID){
+                m.remove(i);
+                System.out.println("\nMember Removed\n");
+                return;
+                }
+            }
+        System.out.println("\nMember ID not found");
+        }
+
+        public void printMemberInfo(LinkedList<Member> m){
+
+            int memberID;
+            System.out.println("\nEnter Member ID to display information: ");
+            memberID = getIntInput();
+            for(int i = 0; i < m.size(); i++){
+                if (m.get(i).getMemberID() == memberID){
+                    String[] memberInfo = m.get(i).toString().split(", ");
+                    System.out.println("\n\nMember Type = " + memberInfo[0]);
+                    System.out.println("\n\nMember Type = " + memberInfo[1]);
+                    System.out.println("\n\nMember Type = " + memberInfo[2]);
+                    System.out.println("\n\nMember Type = " + memberInfo[3]);
+                    System.out.println("\n\nMember Type = " + memberInfo[4]);
+                    if (memberInfo[0].equals("S")){
+                        System.out.println("Club ID = " + memberInfo[4]);
+                    }else {
+                        System.out.println("Membership Points = " + memberInfo[4]);
+                    }
+                }
+                    return;
+                }
+
+           System.out.println("\nMember ID not found");
+        }
 }
-}
+
 
