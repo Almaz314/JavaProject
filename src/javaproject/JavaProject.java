@@ -1,7 +1,7 @@
 package javaproject;
-import java.lang.reflect.Member;
+
 import java.util.LinkedList;
-import java.util.logging.FileHandler;
+
 
 public class JavaProject{
 
@@ -23,7 +23,7 @@ public class JavaProject{
                     break;
                 case 2:
                     mm.removeMember(members);
-                    fh.overwriteFile(members);
+                    fh.overWriteFile(members);
                     break;
                 case 3:
                     mm.printMemberInfo(members);

@@ -60,13 +60,13 @@ public class MembershipManagment {
         printCloubOptions();
         System.out.println("\nPlease enter the member's clubID: ");
         club = getIntInput();
-        while (club < 1 || club > 4){
+        while (club < 1 || club > 4) {
             System.out.println("\nInvalid ClubID. Please try again: ");
             club = getIntInput();
+        }
             if (m.size() > 0)
                 memberID = m.getLast().getMemberID() + 1;
             else memberID = 1;
-        }
 
         if (club !=4){
             cal = (n) -> {
@@ -93,7 +93,8 @@ public class MembershipManagment {
                     else
                         return -1;
                 };
-            fees = new MultiClubMember('M', memberID, name, fees, 100);
+            fees = cal.calculateFees(club);
+            mbr = new MultiClubMember('M', memberID, name, fees, 100);
             m.add(mbr);
             mem = mbr.toString();
             System.out.println("\nSTATUS: Multi Club Member added\n");

@@ -14,9 +14,12 @@ public class FileHandler {
 
         try (BufferedReader reader = new BufferedReader(new FileReader("member.cvs"))){
             lineRead = reader.readLine();
-            while (lineRead != null) {
+            while (lineRead != null)
+            {
                 splitLine = lineRead.split(", ");
-                if (splitLine[0].equals("S")){
+
+                if (splitLine[0].equals("S"))
+                {
                     mem = new SingleClubMember('S', Integer.parseInt(splitLine[1]), splitLine[2], Double.parseDouble(splitLine[3]), Integer.parseInt(splitLine[4]));
                 }else {
                     mem = new MultiClubMember('M', Integer.parseInt(splitLine[1]), splitLine[2], Double.parseDouble(splitLine[3]), Integer.parseInt(splitLine[4]));
@@ -24,13 +27,12 @@ public class FileHandler {
                 m.add(mem);
                 lineRead = reader.readLine();
             }
+        }
             catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
             return m;
                 }
-
-            }
 
     public void appendFile(String mem){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("members.cvs", true))){
@@ -41,11 +43,11 @@ public class FileHandler {
             }
         }
 
-    public void overWriteFile() {
+    public void overWriteFile(LinkedList<Member> m) {
         String s;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("members.temp", false))) {
             for (int i = 0; i < m.size(); i++) {
-                s = m.get(i).toString;
+                s = m.get(i).toString();
                 writer.write(s + "\n");
             }
         }catch(IOException e){
@@ -56,7 +58,7 @@ public class FileHandler {
                 File tf = new File("members.temp");
                 f.delete();
                 tf.renameTo(f);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
         }
     }
