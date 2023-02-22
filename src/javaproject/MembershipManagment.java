@@ -35,7 +35,7 @@ public class MembershipManagment {
 
     public int getChoice(){
         int choice;
-        System.out.println("\nWELCOM TO OZONE FITNESS CENTER");
+        System.out.println("\nWELCOME TO OZONE FITNESS CENTER");
         System.out.println("=================================");
         System.out.println("1) Add Member");
         System.out.println("2) Remove Member");

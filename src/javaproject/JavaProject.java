@@ -29,7 +29,7 @@ public class JavaProject{
                     mm.printMemberInfo(members);
                     break;
                 default:
-                    System.out.println("\nYou have selelcted an invalid option.\n\n");
+                    System.out.println("\nYou have selected an invalid option.\n\n");
                     break;
             }
             choice = mm.getChoice();

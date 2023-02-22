@@ -12,7 +12,7 @@ public class FileHandler {
         String[] splitLine;
         Member mem;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("member.cvs"))){
+        try (BufferedReader reader = new BufferedReader(new FileReader("members.cvs"))){
             lineRead = reader.readLine();
             while (lineRead != null)
             {
@@ -54,7 +54,7 @@ public class FileHandler {
                 System.out.println(e.getMessage());
             }
             try {
-                File f = new File("members.csv");
+                File f = new File("members.cvs");
                 File tf = new File("members.temp");
                 f.delete();
                 tf.renameTo(f);
